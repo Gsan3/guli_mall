@@ -9,9 +9,9 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.tjj.gulimall</groupId>
-    <artifactId>gulimall-menber</artifactId>
+    <artifactId>gulimall-member</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>gulimall-menber</name>
+    <name>gulimall-member</name>
     <description>谷粒商城-用户服务</description>
 
     <properties>
