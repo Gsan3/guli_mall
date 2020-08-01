@@ -13,7 +13,7 @@
         <module>gulimall-product</module>
         <module>gulimall-order</module>
         <module>gulimall-coupon</module>
-        <module>gulimall-menber</module>
+        <module>gulimall-member</module>
         <module>gulimall-ware</module>
     </modules>
 
