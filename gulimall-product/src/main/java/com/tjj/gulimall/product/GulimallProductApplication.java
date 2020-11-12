@@ -48,7 +48,18 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
  *
  * 5、统一的异常处理
  * @controllerAdvice
- *     1)、
+ *    1)、编写异常处理类，使用@ControllerAdvice
+ *    2）、使用@ExceptionHandler标注可以处理的异常
+ *
+ * 6、模板引擎
+ *      1）、thymeleaf-start：关闭缓存
+ *      2）、静态资源都放在static文件夹下，按照路径直接访问
+ *      3）、页面放在templates文件夹下，直接可以访问
+ *      SpringBoot，访问项目的时候，默认会找index
+ *
+ * 7、页面修改不重启服务器实时更新：热部署
+ *     1）、引入dev-tools
+ *     2）、修改完页面重新编译：ctrl+shift+f9
  */
 @EnableFeignClients(basePackages = "com.tjj.gulimall.product.feign")  //开启远程调用功能
 @MapperScan("com.tjj.gulimall.product.dao")

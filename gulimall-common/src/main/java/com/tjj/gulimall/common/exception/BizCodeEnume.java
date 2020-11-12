@@ -19,7 +19,8 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
 @ControllerAdvice
 public enum BizCodeEnume {
     UNKNOW_EXCEPTION(10000,"系统未知错误"),
-    VALUE_EXCEPTION(100001,"参数校验失败");
+    VALUE_EXCEPTION(100001,"参数校验失败"),
+    PRODUCT_UP_EXCEPTION(11000,"商品上架异常");
 
     private int code;
     private String msg;
