@@ -22,6 +22,10 @@ spring:
   thymeleaf:
     cache: false
 
+  redis:
+    host: 192.168.56.10
+    port: 6379
+
 
 
 mybatis-plus:
@@ -33,10 +37,9 @@ mybatis-plus:
       logic-not-delete-value: 1
 
 
-server:
-  port: 9000
+#server:
+  #port: 9000
 
 logging:
   level:
     com.tjj.gulimall: debug
-

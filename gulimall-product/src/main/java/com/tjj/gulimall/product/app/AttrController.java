@@ -47,11 +47,11 @@ public class AttrController {
     /**
      * 规格参数列表
      */
-    @GetMapping("/{attrType}/list/{catelogId}")
+    @GetMapping("/{attrType}/list/{catalogId}")
     public R baseList(@RequestParam Map<String, Object> params,
-                      @PathVariable("catelogId") Long catelogId,
+                      @PathVariable("catalogId") Long catalogId,
                       @PathVariable("attrType") String attrType){
-        PageUtils page = attrService.queryBaseListPage(params, catelogId,attrType);
+        PageUtils page = attrService.queryBaseListPage(params, catalogId,attrType);
 
         return R.ok().put("page", page);
     }

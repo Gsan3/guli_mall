@@ -50,6 +50,11 @@ spring:
         - id: mimemall_host_route
           uri: lb://gulimall-product   #负载均衡给商品服务
           predicates:
-            - Host=**.mimemall.com  #断言任意的子域名
+            - Host=mimemall.com  #断言的子域名
+
+        - id: mimemall_search_route
+          uri: lb://gulimall-search   #负载均衡给商品服务
+          predicates:
+            - Host=search.mimemall.com  #断言的子域名
 
 ##前端项目，全部路由待/api

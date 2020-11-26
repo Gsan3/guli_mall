@@ -9,5 +9,7 @@ package com.tjj.gulimall.search.constant;
  */
 public class EsConstant {
 
-    public static final String PRODUCT_INDEX = "product"; //商品索引
+    public static final String PRODUCT_INDEX = "mimemall_product"; //商品索引
+
+    public static final Integer PRODUCT_PAGESIZE = 2;
 }

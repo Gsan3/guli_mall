@@ -41,7 +41,7 @@ public class AttrGroupServiceImpl extends ServiceImpl<AttrGroupDao, AttrGroupEnt
     }
 
     @Override
-    public PageUtils queryPage(Map<String, Object> params, Long catelogId) {
+    public PageUtils queryPage(Map<String, Object> params, Long catalogId) {
         String key = (String) params.get("key");
         LambdaQueryWrapper<AttrGroupEntity> wrapper = new LambdaQueryWrapper<AttrGroupEntity>();
         if (!StringUtils.isEmpty(key)){
@@ -49,12 +49,12 @@ public class AttrGroupServiceImpl extends ServiceImpl<AttrGroupDao, AttrGroupEnt
                 data.eq(AttrGroupEntity::getAttrGroupId, key).or().like(AttrGroupEntity::getAttrGroupName, key);
             });
         }
-        if (catelogId == 0){
+        if (catalogId == 0){
             IPage<AttrGroupEntity> page = this.page(new Query<AttrGroupEntity>().getPage(params),
                     wrapper);
             return new PageUtils(page);
         }else{
-            wrapper.eq(AttrGroupEntity::getCatelogId, catelogId);
+            wrapper.eq(AttrGroupEntity::getCatalogId, catalogId);
             IPage<AttrGroupEntity> page = this.page(new Query<AttrGroupEntity>().getPage(params),
                     wrapper);
             return new PageUtils(page);
@@ -62,13 +62,13 @@ public class AttrGroupServiceImpl extends ServiceImpl<AttrGroupDao, AttrGroupEnt
     }
 
     /**
-     * 根据catelogId获取该分类下的所有属性分组下的所有属性
-     * @param catelogId
+     * 根据catalogId获取该分类下的所有属性分组下的所有属性
+     * @param catalogId
      * @return
      */
     @Override
-    public List<AttrGroupWithAttrsVo> getAttrGroupWithAttrsByCatelogId(Long catelogId) {
-        List<AttrGroupEntity> attrGroupEntities = this.list(new QueryWrapper<AttrGroupEntity>().eq("catelog_id", catelogId));
+    public List<AttrGroupWithAttrsVo> getAttrGroupWithAttrsByCatalogId(Long catalogId) {
+        List<AttrGroupEntity> attrGroupEntities = this.list(new QueryWrapper<AttrGroupEntity>().eq("catalog_id", catalogId));
         List<AttrGroupWithAttrsVo> collect = attrGroupEntities.stream().map(data -> {
             AttrGroupWithAttrsVo attrGroupWithAttrsVo = new AttrGroupWithAttrsVo();
             BeanUtils.copyProperties(data, attrGroupWithAttrsVo);

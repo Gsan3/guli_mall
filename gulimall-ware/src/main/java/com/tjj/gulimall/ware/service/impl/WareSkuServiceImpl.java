@@ -4,6 +4,7 @@ import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.tjj.gulimall.common.to.SkuHasStockVo;
 import com.tjj.gulimall.common.utils.R;
 import com.tjj.gulimall.ware.feign.ProductFeignService;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -22,7 +23,7 @@ import com.tjj.gulimall.ware.dao.WareSkuDao;
 import com.tjj.gulimall.ware.entity.WareSkuEntity;
 import com.tjj.gulimall.ware.service.WareSkuService;
 
-
+@Slf4j
 @Service("wareSkuService")
 public class WareSkuServiceImpl extends ServiceImpl<WareSkuDao, WareSkuEntity> implements WareSkuService {
 
@@ -96,6 +97,7 @@ public class WareSkuServiceImpl extends ServiceImpl<WareSkuDao, WareSkuEntity> i
             Long count = this.baseMapper.getSkuStock(skuId);
             vo.setSkuId(skuId);
             vo.setHasStock(count == null?false:count>0);
+            log.info("===============>"+count);
             return vo;
         }).collect(Collectors.toList());
         return collect;

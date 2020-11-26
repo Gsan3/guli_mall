@@ -1,16 +1,10 @@
-package com.tjj.gulimall.product.vo;
+package com.tjj.gulimall.search.vo;
 
 import lombok.Data;
 
-/**
- * Created with IntelliJ IDEA.
- *
- * @author: Tjj
- * @Date: 2020/10/15
- * Description:
- */
 @Data
-public class AttrVo {
+public class AttrResponseVo {
+
     /**
      * 属性id
      */
@@ -27,12 +21,6 @@ public class AttrVo {
      * 属性图标
      */
     private String icon;
-
-    /**
-     * 值类型
-     */
-    private Boolean valueType;
-
     /**
      * 可选值列表[用逗号分隔]
      */
@@ -55,4 +43,11 @@ public class AttrVo {
     private Integer showDesc;
 
     private Long attrGroupId;
+
+    private String catelogName;
+
+    private String groupName;
+
+    private Long[] catelogPath;
+
 }
